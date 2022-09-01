@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/style5.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>version</title>
+</head>
+<body>
+    <div id="main5">
+        <!--Main header-->
+        <header id="head">
+            UsingFileVersionInfo
+        </header>
+
+
+        <!--Main content start from here-->
+<div id="para5">
+    <p id="p1">
+Getting the version number of any managed / unmanaged DLL or executable in .NET 1.0, if i
+recall correctly, required some magic incantations with Pinvoke.<br/>
+</p>
+<p>
+I just discovered the FileVersionInfo class from System.Diagnostics:
+<div id="code">
+FileVersionInfo versionInfo;<br/>
+versionInfo = FileVversionInfo.GetVersionInfo(@"e: \win2003\system32\svchost.exe”) ;<br/>
+MessageBox.Show(versionInfo. Tostring());<br/>
+</div>
+To use the class then, all you need to do is:
+<ol id="list">
+<li>Invoke the static GetVersioninfo method</li>
+<li>Start using the properties of the resulting object </li> 
+</ol>
+File version is a 64 bit number.
+<ul>
+<li>The first 16 bits are the major number</li>
+<li>The next 16 bits are the minor number</li>
+<li>The third set of 16 bits are the build number</li>
+<li>The last 16 bits are the private build number</li>
+</ul>
+</div>
+
+<!--footer-->
+    <footer id="foot">
+        (c)2005 copyright notice
+    </footer>
+
+</div>
+</body>
+</html>
+
+
+
+
+
